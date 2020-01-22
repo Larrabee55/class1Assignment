@@ -97,7 +97,12 @@ var Books = [
 function displayBooks() {
 
   for (var i = 0; i < Books.length; i++) {
-    $("#books").append("<p>" + Books[i].Title + ", " + Books[i].Author + ", Price:$" + Books[i].Price + "</p>");
+    $("#books").append("<p>" + Books[i].Title + "</p>");
+    $("#books").append("<p>" + Books[i].Author + "</p>");
+    if (Books[i].Forsale == true) {
+      $("#books").append("<p>Price: $" + Books[i].Price + "</p>");
+    }
+
     if (Books[i].Awards instanceof Array) {
       $("#books").append("<p>Awards: <ul>");
       var k = 0;
